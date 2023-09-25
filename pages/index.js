@@ -12,15 +12,11 @@ function HomePage(props) {
         <meta name="descripton" content="Browse a huge list of meetups" />
       </Head>
       {!props.error ? (
-        <MeetupList
-          meetups={props.meetups}
-          header={
+        <MeetupList meetups={props.meetups} header={
             props.meetups.length === 0 ? "No Meetups Found" : "All Meetups"
           }
         />
-      ) : (
-        <p className="error">{props.error}</p>
-      )}
+      ) : (<p className="error">{props.error}</p>)}
     </Fragment>
   );
 }

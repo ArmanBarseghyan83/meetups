@@ -14,13 +14,9 @@ function SavedPage(props) {
       {!props.error ? (
         <MeetupList
           meetups={props.meetups}
-          header={
-            props.meetups.length === 0 ? "No Saved Meetups" : "Saved Meetups"
-          }
+          header={props.meetups.length === 0 ? "No Saved Meetups" : "Saved Meetups"}
         />
-      ) : (
-        <p className="error">{props.error}</p>
-      )}
+      ) : (<p className="error">{props.error}</p>)}
     </Fragment>
   );
 }

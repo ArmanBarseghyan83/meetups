@@ -14,13 +14,12 @@ async function updateMeetup(req, res) {
       res.status(500).json({ message: "Could not connect to database." });
       return;
     }
+
     const db = client.db();
+    
     try {
       const meetupsCollection = db.collection("meetups");
-      await meetupsCollection.updateOne(
-        { _id: new ObjectId(id) },
-        { $set: { ...data } }
-      );
+      await meetupsCollection.updateOne({ _id: new ObjectId(id) }, { $set: { ...data } });
     } catch (error) {
       res.status(500).json({ message: "Something went wrong." });
       return;

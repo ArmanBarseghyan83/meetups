@@ -8,10 +8,7 @@ function MeetupDetails(props) {
     <Fragment>
       <Head>
         <title>{!props.error ? props.meetupData.title : "error"}</title>
-        <meta
-          name="descripton"
-          content={!props.error ? props.meetupData.description : props.error}
-        />
+        <meta name="descripton" content={!props.error ? props.meetupData.description : props.error} />
       </Head>
       {!props.error ? (
         <MeetupDetail
@@ -23,29 +20,10 @@ function MeetupDetails(props) {
           date={props.meetupData.date}
           isSaved={props.isSaved}
         />
-      ) : (
-        <p className="error">{props.error}</p>
-      )}
+      ) : (<p className="error">{props.error}</p>)}
     </Fragment>
   );
 }
-
-/* export async function getStaticPaths() {
-  const client = await MongoClient.connect(
-    "mongodb+srv://Arman:anoosh2009@cluster0.bkb4tch.mongodb.net/meetups?retryWrites=true&w=majority"
-  );
-  const db = client.db();
-  const meetupsCollection = db.collection("meetups");
-
-  const meetups = await meetupsCollection.find({}, { _id: 1 }).toArray();
-
-  return {
-    fallback: false,
-    paths: meetups.map((meetup) => ({
-      params: { meetupId: meetup._id.toString() },
-    })),
-  };
-} */
 
 export async function getServerSideProps(context) {
   const meetupId = context.params.meetupId;
