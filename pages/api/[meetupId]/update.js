@@ -1,5 +1,6 @@
 import { MongoClient, ObjectId } from "mongodb";
 
+// Updatae the meetup
 async function updateMeetup(req, res) {
   if (req.method === "POST") {
     const data = req.body;

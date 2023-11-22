@@ -1,5 +1,6 @@
 import { MongoClient } from "mongodb";
 
+// Save the meetup to the database
 async function save(req, res) {
   const id = req.query.meetupId;
 

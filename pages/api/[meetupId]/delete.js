@@ -1,5 +1,6 @@
 import { MongoClient, ObjectId } from "mongodb";
 
+// Delete the meetup from the database
 async function deleteMeetup(req, res) {
   const id = req.query.meetupId;
 

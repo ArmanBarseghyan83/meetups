@@ -16,15 +16,18 @@ function NewMeetupForm(props) {
     !props.meetup ? router.push("/") : router.push(`/${props.meetup.id}`);
   }
 
+  // Collect the data from the form inputs and submit the form
   function submitHandler(event) {
     event.preventDefault();
 
+    // Save in a variable the form inputs values
     const enteredTitle = titleInputRef.current.value;
     const enteredImage = imageInputRef.current.value;
     const enteredAddress = addressInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
     const enteredDate = dateInputRef.current.value;
 
+    // Create an object with the form input values
     const meetupData = {
       title: enteredTitle,
       image: enteredImage,

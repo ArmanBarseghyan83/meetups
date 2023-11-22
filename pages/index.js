@@ -21,6 +21,7 @@ function HomePage(props) {
   );
 }
 
+// Set the props with all meetups data the for home page
 export async function getServerSideProps() {
   try {
     const client = await MongoClient.connect(

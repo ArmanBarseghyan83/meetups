@@ -25,6 +25,7 @@ function MeetupDetails(props) {
   );
 }
 
+// Set the props with meetup data from database
 export async function getServerSideProps(context) {
   const meetupId = context.params.meetupId;
   try {

@@ -38,23 +38,7 @@ function UpdateMeetupPage(props) {
 
 export default UpdateMeetupPage;
 
-/* export async function getStaticPaths() {
-  const client = await MongoClient.connect(
-    "mongodb+srv://Arman:anoosh2009@cluster0.bkb4tch.mongodb.net/meetups?retryWrites=true&w=majority"
-  );
-  const db = client.db();
-  const meetupsCollection = db.collection("meetups");
-
-  const meetups = await meetupsCollection.find({}, { _id: 1 }).toArray();
-
-  return {
-    fallback: false,
-    paths: meetups.map((meetup) => ({
-      params: { meetupId: meetup._id.toString() },
-    })),
-  };
-} */
-
+// Set the props with meetup data from database to prepopulate the form
 export async function getServerSideProps(context) {
   const id = context.params.meetupId;
 

@@ -23,6 +23,7 @@ function SavedPage(props) {
 
 export default SavedPage;
 
+// Set the props with the saved meetups data the for saved page
 export async function getServerSideProps() {
   try {
     const client = await MongoClient.connect(

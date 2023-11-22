@@ -5,6 +5,7 @@ import Link from "next/link";
 function MeetupDetail(props) {
   const router = useRouter();
 
+  // Delete the meetup from the database by its id value
   const deleteHandler = () => {
     const confirm = window.confirm("Are you sure?");
 
